@@ -1,0 +1,28 @@
+<?php
+
+class car 
+{
+    private bool $hasParkBrake=true;
+
+
+
+   public function setParkBrake(bool $isSet):void
+   {
+        $this->hasParkBrake = $isSet;
+   }
+   public function start(): 
+   {
+   
+       try {
+
+        if($this->$hasParkBrake){
+            throw new Exception('attention');
+       }catch (Exception $e) {
+           $this->$hasParkBrake = false ;
+       }finally{
+           echo'go';
+       }
+
+    }     
+   }
+}
